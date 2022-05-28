@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE</title>
+    <style>
+        table,th{
+            border: solid;
+            margin-left: 400px;
+
+        }
+    
+    </style>
+</head>
+ 
+<body>
+    <h1 style="text-align: center;">EDIT/UPDATE</h1>
+    <p style="margin-left:550px;"><a href="read">AVAILABLE DETAILS</a></p>
+        
+                <form action="/update/{{object.id}}" method="POST">
+                    {% csrf_token %}
+                   
+                    <table>
+                        <th>
+                    <h2><b>NAME:<input type="text" name="name" value="{{object.name}}"></b><br></h2>
+                    <h2><b>AGE:<input type="text" name="age" value="{{object.age}}"></b><br></h2>
+                    <h2><b>ADDRESS:<input type="address" name="address" value="{{object.address}}"></b><br></h2>
+                    <button>SUBMIT</button> 
+                    </th>
+                    </table>
+                </form>
+</body>
+ 
+</html>

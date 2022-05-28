@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETAILS</title>
+    <style>
+        table {
+            margin-left: 400px;
+            margin-top: 50px;
+            column-width: 20px;
+            font-size: 20px;
+            border: 5px solid black;
+            padding: 5px;
+        }
+ 
+        thead {
+            padding: 10px;
+        }
+ 
+        tbody {
+            padding: 10px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <p style="margin-left:550px;"><a href="/">BACK TO HOME</a></p>
+    <div class="container">
+        <table border="5px solid #000;">
+            <tbody>
+ 
+                <thead>
+                    <tr>
+                        <th>NAME</th>
+                        <th>AGE</th>
+                        <th>ADDRESS</th>
+                        <th>UPDATE</th>
+                        <th>DELETE</th>
+                    </tr>
+ 
+                </thead>
+            <tbody>
+                {% for i in detail %}
+                <tr>
+                    <td style="padding:10px;">{{i.name}}</td>
+                    <td style="padding:10px;">{{i.age}}</td>
+                    <td style="padding:10px;">{{i.address}}</td>
+                    <td style="padding:10px;"><a href="{% url 'edit' i.pk %}">UPDATE</a></td>
+                    <td style="padding:10px;"><a href="{% url 'delete' i.pk %}">DELETE</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
